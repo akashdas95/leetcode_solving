@@ -19,6 +19,7 @@
 * Queue 🚋🚋
 * Bit_Manipulation 🔟
 * Greedy :shipit:
+* Two Pointer 2️⃣👉
 * Hash Map 🔑
 * Hash Set 🔑
 * Recursion 🌀
