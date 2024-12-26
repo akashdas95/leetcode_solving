@@ -1,5 +1,6 @@
 # Repository Name - leetcode_solving
-![leetcode_profile](https://github.com/user-attachments/assets/5641d060-7ed5-4f21-a1d6-3c5b6f2f073b)
+![leetcode_profile](https://github.com/user-attachments/assets/bc35b889-36bc-4e93-8275-75253de31679)
+
 
 ## Welcome to my LeetCode problem-solving repository! This repository contains solutions to various LeetCode problems I’ve solved. The solutions are implemented in multiple programming languages, organized by problem categories and difficulty levels. Each folder contains a specific solution.
 
