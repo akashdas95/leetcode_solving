@@ -1,4 +1,22 @@
-// C++
+//C++ brute force
+class Solution {
+    public:
+        string removeOccurrences(string s, string part) {
+            while(true){
+                int idx = s.find(part);
+    
+                if(idx == string::npos){
+                    break;
+                }
+    
+                s.erase(idx, part.size());
+            }
+            return s;
+        }
+};  
+
+
+// C++ better solution
 class Solution
 {
 public:
