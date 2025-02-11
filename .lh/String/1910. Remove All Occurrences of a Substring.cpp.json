@@ -1,0 +1,26 @@
+{
+    "sourceFile": "String/1910. Remove All Occurrences of a Substring.cpp",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1739283076443,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1739283082598,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,36 @@\n+//JAVA\r\n+class Solution {\r\n+    public boolean check(Stack<Character> st, String part) {\r\n+        Stack<Character> tempSt = new Stack<Character>();\r\n+        tempSt.addAll(st);\r\n+\r\n+        for (int i = part.length() - 1; i >= 0; i--) {\r\n+            if (tempSt.isEmpty() || tempSt.peek() != part.charAt(i)) {\r\n+                return false;\r\n+            }\r\n+            tempSt.pop();\r\n+        }\r\n+        return true;\r\n+    }\r\n+    public String removeOccurrences(String s, String part) {\r\n+        Stack<Character> st = new Stack<>();\r\n+        int i = 0;\r\n+        while (i < s.length()) {\r\n+            st.push(s.charAt(i));\r\n+            if (st.size() >= part.length() && check(st,part)) {\r\n+                for (int j = 0; j < part.length(); j++) {\r\n+                    if(!st.isEmpty()){\r\n+                        st.pop();\r\n+                    }\r\n+                }\r\n+            }\r\n+            i++;\r\n+        }\r\n+        StringBuilder res = new StringBuilder();\r\n+        while (!st.isEmpty()) {\r\n+            res.append(st.pop());\r\n+        }\r\n+        return res.reverse().toString();\r\n+    }\r\n+}\r\n+\r\n"
+                },
+                {
+                    "date": 1739283095417,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n //C++\r\n \r\n \r\n \r\n+\r\n //JAVA\r\n class Solution {\r\n     public boolean check(Stack<Character> st, String part) {\r\n         Stack<Character> tempSt = new Stack<Character>();\r\n"
+                }
+            ],
+            "date": 1739283076443,
+            "name": "Commit-0",
+            "content": "class Solution {\r\n    public boolean check(Stack<Character> st, String part) {\r\n        Stack<Character> tempSt = new Stack<Character>();\r\n        tempSt.addAll(st);\r\n\r\n        for (int i = part.length() - 1; i >= 0; i--) {\r\n            if (tempSt.isEmpty() || tempSt.peek() != part.charAt(i)) {\r\n                return false;\r\n            }\r\n            tempSt.pop();\r\n        }\r\n        return true;\r\n    }\r\n    public String removeOccurrences(String s, String part) {\r\n        Stack<Character> st = new Stack<>();\r\n        int i = 0;\r\n        while (i < s.length()) {\r\n            st.push(s.charAt(i));\r\n            if (st.size() >= part.length() && check(st,part)) {\r\n                for (int j = 0; j < part.length(); j++) {\r\n                    if(!st.isEmpty()){\r\n                        st.pop();\r\n                    }\r\n                }\r\n            }\r\n            i++;\r\n        }\r\n        StringBuilder res = new StringBuilder();\r\n        while (!st.isEmpty()) {\r\n            res.append(st.pop());\r\n        }\r\n        return res.reverse().toString();\r\n    }\r\n}\r\n\r\n"
+        }
+    ]
+}
