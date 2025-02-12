@@ -1,0 +1,34 @@
+{
+    "sourceFile": "Array/2342. Max Sum of a Pair With Equal Sum of Digits.cpp",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1739354823444,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1739354829466,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-//C++ \n\\ No newline at end of file\n+//C++ Brute force\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1739354848168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,26 @@\n+//C++ Brute force\r\n+class Solution {\r\n+    public:\r\n+        int digitSum(int digit) {\r\n+            int sum = 0;\r\n+            while (digit > 0) {\r\n+                sum += digit % 10;\r\n+                digit = digit / 10;\r\n+            }\r\n+            return sum;\r\n+        }\r\n+    \r\n+        int maximumSum(vector<int>& nums) {\r\n+            int res = -1;\r\n+            for (int i = 0; i < nums.size(); i++) {\r\n+                int digitSumofI = digitSum(nums[i]);\r\n+                for (int j = i + 1; j < nums.size(); j++) {\r\n+                    int digitSumofJ = digitSum(nums[j]);\r\n+                    if (digitSumofI == digitSumofJ) {\r\n+                        res = max(res, nums[i] + nums[j]);\r\n+                    }\r\n+                }\r\n+            }\r\n+            return res;\r\n+        }\r\n+};\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1739354855865,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,5 +24,5 @@\n             return res;\r\n         }\r\n };\r\n \r\n-//C++ \n\\ No newline at end of file\n+//C++ be\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1739354864619,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,4 +25,30 @@\n         }\r\n };\r\n \r\n //C++ better\r\n+class Solution {\r\n+    public:\r\n+        int getDigitSum(int digit) {\r\n+            int sum = 0;\r\n+            while (digit > 0) {\r\n+                sum += digit % 10;\r\n+                digit = digit / 10;\r\n+            }\r\n+            return sum;\r\n+        }\r\n+    \r\n+        int maximumSum(vector<int>& nums) {\r\n+            int res = -1;\r\n+            unordered_map<int,int>mp;\r\n+            for(int i=0; i<nums.size(); i++){\r\n+                int digitSum = getDigitSum(nums[i]);\r\n+    \r\n+                if(mp.count(digitSum)){\r\n+                    res = max(res, nums[i] + mp[digitSum]);\r\n+                }\r\n+    \r\n+                mp[digitSum] = max(nums[i], mp[digitSum]);\r\n+            }\r\n+            return res;\r\n+        }\r\n+    };\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1739354823444,
+            "name": "Commit-0",
+            "content": "//C++ "
+        }
+    ]
+}
