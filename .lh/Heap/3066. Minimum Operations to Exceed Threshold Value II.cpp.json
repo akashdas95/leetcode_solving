@@ -1,0 +1,30 @@
+{
+    "sourceFile": "Heap/3066. Minimum Operations to Exceed Threshold Value II.cpp",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1739434845671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1739434853258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,22 @@\n+\r\n+\r\n+\r\n+//Java\r\n+class Solution {\r\n+    public int minOperations(int[] nums, int k) {\r\n+        PriorityQueue<Long> minHeap = new PriorityQueue<Long>();\r\n+        for(int i=0; i<nums.length; i++){\r\n+            minHeap.add((long)nums[i]);\r\n+        }\r\n+\r\n+        int count = 0;\r\n+        while(!minHeap.isEmpty() && minHeap.peek() < k){\r\n+            long x = minHeap.remove();\r\n+            long y = minHeap.remove();\r\n+            long val = (Math.min(x,y) * 2) + Math.max(x,y);\r\n+            minHeap.add((long)val);\r\n+            count++; \r\n+        }\r\n+        return count; \r\n+    }\r\n+}\r\n"
+                },
+                {
+                    "date": 1739434866687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,40 @@\n+//C++\r\n+class Solution {\r\n+    public:\r\n+        int minOperations(vector<int>& nums, int k) {\r\n+            priority_queue<long,vector<long>, greater<long>>pq(begin(nums),end(nums));\r\n+    \r\n+            int count = 0;\r\n+            while(!pq.empty() && pq.top() < k){\r\n+                long x = pq.top();\r\n+                pq.pop();\r\n+                long y = pq.top();\r\n+                pq.pop();\r\n+                long val = (min(x,y) * 2) + max(x,y);\r\n+                pq.push(val);\r\n+                count++; \r\n+            }\r\n+            return count;\r\n+        }\r\n+    };\r\n+\r\n+\r\n+//Java\r\n+class Solution {\r\n+    public int minOperations(int[] nums, int k) {\r\n+        PriorityQueue<Long> minHeap = new PriorityQueue<Long>();\r\n+        for(int i=0; i<nums.length; i++){\r\n+            minHeap.add((long)nums[i]);\r\n+        }\r\n+\r\n+        int count = 0;\r\n+        while(!minHeap.isEmpty() && minHeap.peek() < k){\r\n+            long x = minHeap.remove();\r\n+            long y = minHeap.remove();\r\n+            long val = (Math.min(x,y) * 2) + Math.max(x,y);\r\n+            minHeap.add((long)val);\r\n+            count++; \r\n+        }\r\n+        return count; \r\n+    }\r\n+}\r\n"
+                },
+                {
+                    "date": 1739434877542,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,63 +1,47 @@\n-//C++\r\n-class Solution {\r\n-    public:\r\n-        int minOperations(vector<int>& nums, int k) {\r\n-            priority_queue<long,vector<long>, greater<long>>pq(begin(nums),end(nums));\r\n-    \r\n-            int count = 0;\r\n-            while(!pq.empty() && pq.top() < k){\r\n-                long x = pq.top();\r\n-                pq.pop();\r\n-                long y = pq.top();\r\n-                pq.pop();\r\n-                long val = (min(x,y) * 2) + max(x,y);\r\n-                pq.push(val);\r\n-                count++; \r\n-            }\r\n-            return count;\r\n-        }\r\n-    };\r\n+// C++\r\n+class Solution\r\n+{\r\n+public:\r\n+    int minOperations(vector<int> &nums, int k)\r\n+    {\r\n+        priority_queue<long, vector<long>, greater<long>> pq(begin(nums), end(nums));\r\n \r\n-\r\n-//Java\r\n-class Solution {\r\n-    public int minOperations(int[] nums, int k) {\r\n-        PriorityQueue<Long> minHeap = new PriorityQueue<Long>();\r\n-        for(int i=0; i<nums.length; i++){\r\n-            minHeap.add((long)nums[i]);\r\n-        }\r\n-\r\n         int count = 0;\r\n-        while(!minHeap.isEmpty() && minHeap.peek() < k){\r\n-            long x = minHeap.remove();\r\n-            long y = minHeap.remove();\r\n-            long val = (Math.min(x,y) * 2) + Math.max(x,y);\r\n-            minHeap.add((long)val);\r\n-            count++; \r\n+        while (!pq.empty() && pq.top() < k)\r\n+        {\r\n+            long x = pq.top();\r\n+            pq.pop();\r\n+            long y = pq.top();\r\n+            pq.pop();\r\n+            long val = (min(x, y) * 2) + max(x, y);\r\n+            pq.push(val);\r\n+            count++;\r\n         }\r\n-        return count; \r\n+        return count;\r\n     }\r\n-}\r\n+};\r\n \r\n-\r\n-\r\n-//Java\r\n-class Solution {\r\n\\ No newline at end of file\n-    public int minOperations(int[] nums, int k) {\r\n+// Java\r\n+class Solution\r\n+{\r\n+public\r\n+    int minOperations(int[] nums, int k)\r\n+    {\r\n         PriorityQueue<Long> minHeap = new PriorityQueue<Long>();\r\n-        for(int i=0; i<nums.length; i++){\r\n+        for (int i = 0; i < nums.length; i++)\r\n+        {\r\n             minHeap.add((long)nums[i]);\r\n         }\r\n \r\n         int count = 0;\r\n-        while(!minHeap.isEmpty() && minHeap.peek() < k){\r\n+        while (!minHeap.isEmpty() && minHeap.peek() < k)\r\n+        {\r\n             long x = minHeap.remove();\r\n             long y = minHeap.remove();\r\n-            long val = (Math.min(x,y) * 2) + Math.max(x,y);\r\n+            long val = (Math.min(x, y) * 2) + Math.max(x, y);\r\n             minHeap.add((long)val);\r\n-            count++; \r\n+            count++;\r\n         }\r\n-        return count; \r\n+        return count;\r\n     }\r\n }\r\n-//Java\n"
+                }
+            ],
+            "date": 1739434845671,
+            "name": "Commit-0",
+            "content": "//Java"
+        }
+    ]
+}
