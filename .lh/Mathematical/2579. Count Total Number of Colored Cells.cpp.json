@@ -1,0 +1,58 @@
+{
+    "sourceFile": "Mathematical/2579. Count Total Number of Colored Cells.cpp",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1741153175070,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1741153181663,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,10 @@\n+\r\n+\r\n+\r\n+\r\n\\ No newline at end of file\n+\r\n+\r\n class Solution {\r\n     public:\r\n         long long coloredCells(int n) { return 1 + (2 * (long long)(n - 1) * n); }\r\n-    };\n+};\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1741153193306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,21 @@\n+class Solution {\r\n+    public:\r\n+        long long coloredCells(int n) {\r\n+            int t = 1;\r\n+            long long cells = 1;\r\n+            while (t <= n) {\r\n+                cells += (4 * (t - 1));\r\n+                t++;\r\n+            }\r\n+            return cells;\r\n+        }\r\n+    };\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+class Solution {\r\n+    public:\r\n+        long long coloredCells(int n) { return 1 + (2 * (long long)(n - 1) * n); }\r\n+};\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1741153204797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+//\r\n class Solution {\r\n     public:\r\n         long long coloredCells(int n) {\r\n             int t = 1;\r\n@@ -17,15 +18,5 @@\n \r\n class Solution {\r\n     public:\r\n         long long coloredCells(int n) { return 1 + (2 * (long long)(n - 1) * n); }\r\n-};\n-\r\n-\r\n-\r\n-\r\n-\r\n-\r\n-class Solution {\r\n-    public:\r\n-        long long coloredCells(int n) { return 1 + (2 * (long long)(n - 1) * n); }\r\n };\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1741153212719,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,22 @@\n+//Brute Force\r\n+class Solution {\r\n+    public:\r\n+        long long coloredCells(int n) {\r\n+            int t = 1;\r\n+            long long cells = 1;\r\n+            while (t <= n) {\r\n+                cells += (4 * (t - 1));\r\n+                t++;\r\n+            }\r\n+            return cells;\r\n+        }\r\n+    };\r\n+\r\n+\r\n+\r\n+\r\n+//\r\n+class Solution {\r\n+    public:\r\n+        long long coloredCells(int n) { return 1 + (2 * (long long)(n - 1) * n); }\r\n+};\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1741153219023,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,31 +14,9 @@\n \r\n \r\n \r\n \r\n-//\r\n+//optimize \r\n class Solution {\r\n     public:\r\n         long long coloredCells(int n) { return 1 + (2 * (long long)(n - 1) * n); }\r\n-};\n-//\r\n-class Solution {\r\n-    public:\r\n-        long long coloredCells(int n) {\r\n-            int t = 1;\r\n-            long long cells = 1;\r\n-            while (t <= n) {\r\n-                cells += (4 * (t - 1));\r\n-                t++;\r\n-            }\r\n-            return cells;\r\n-        }\r\n-    };\r\n-\r\n-\r\n-\r\n-\r\n-\r\n-class Solution {\r\n-    public:\r\n-        long long coloredCells(int n) { return 1 + (2 * (long long)(n - 1) * n); }\r\n };\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1741153224872,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \r\n \r\n \r\n \r\n-//optimize \r\n+//optimize by math\r\n class Solution {\r\n     public:\r\n         long long coloredCells(int n) { return 1 + (2 * (long long)(n - 1) * n); }\r\n };\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1741153234803,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-//Brute Force\r\n+//Brute Force()\r\n class Solution {\r\n     public:\r\n         long long coloredCells(int n) {\r\n             int t = 1;\r\n"
+                },
+                {
+                    "date": 1741153245008,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-//Brute Force()\r\n+//Brute Force(O())\r\n class Solution {\r\n     public:\r\n         long long coloredCells(int n) {\r\n             int t = 1;\r\n"
+                },
+                {
+                    "date": 1741153251015,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-//Brute Force(O())\r\n+//Brute Force(O(n))\r\n class Solution {\r\n     public:\r\n         long long coloredCells(int n) {\r\n             int t = 1;\r\n@@ -14,9 +14,9 @@\n \r\n \r\n \r\n \r\n-//optimize by math\r\n+//optimize by math()\r\n class Solution {\r\n     public:\r\n         long long coloredCells(int n) { return 1 + (2 * (long long)(n - 1) * n); }\r\n };\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1741153256175,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \r\n \r\n \r\n \r\n-//optimize by math()\r\n+//optimize by math(O(1))\r\n class Solution {\r\n     public:\r\n         long long coloredCells(int n) { return 1 + (2 * (long long)(n - 1) * n); }\r\n };\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1741153175070,
+            "name": "Commit-0",
+            "content": "class Solution {\r\n    public:\r\n        long long coloredCells(int n) { return 1 + (2 * (long long)(n - 1) * n); }\r\n    };"
+        }
+    ]
+}
