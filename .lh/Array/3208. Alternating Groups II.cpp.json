@@ -1,0 +1,22 @@
+{
+    "sourceFile": "Array/3208. Alternating Groups II.cpp",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1741508820551,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1741510611327,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,5 +24,32 @@\n             j++;\r\n         }\r\n         return res;\r\n     }\r\n-};\n\\ No newline at end of file\n+};\r\n+\r\n+\r\n+class Solution {\r\n+    public:\r\n+        int numberOfAlternatingGroups(vector<int>& colors, int k) {\r\n+            int n = colors.size();\r\n+            for(int i=0; i< k-1; i++){\r\n+                colors.push_back(colors[i]);\r\n+            }\r\n+            int i = 1, length = 1, res = 0, lastColor = colors[0];\r\n+            while(i< n+(k-1)){\r\n+                if(colors[i] == lastColor){\r\n+                    length = 1;\r\n+                }\r\n+                else{\r\n+                    length++;\r\n+                    lastColor = colors[i];\r\n+                }\r\n+                \r\n+                if(length >= k){\r\n+                    res++;\r\n+                }\r\n+                i++;\r\n+            }\r\n+            return res;\r\n+        }\r\n+    };\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1741508820551,
+            "name": "Commit-0",
+            "content": "class Solution\r\n{\r\npublic:\r\n    int numberOfAlternatingGroups(vector<int> &colors, int k)\r\n    {\r\n        int n = colors.size();\r\n        for (int i = 0; i < k - 1; i++)\r\n        {\r\n            colors.push_back(colors[i]);\r\n        }\r\n        int i = 0, j = 1, res = 0;\r\n        while (j < n + (k - 1))\r\n        {\r\n            if (colors[j] == colors[j - 1])\r\n            {\r\n                i = j;\r\n            }\r\n\r\n            if (j - i + 1 == k)\r\n            {\r\n                res++;\r\n                i++;\r\n            }\r\n            j++;\r\n        }\r\n        return res;\r\n    }\r\n};"
+        }
+    ]
+}
