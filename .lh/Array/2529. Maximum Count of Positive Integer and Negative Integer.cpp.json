@@ -1,0 +1,18 @@
+{
+    "sourceFile": "Array/2529. Maximum Count of Positive Integer and Negative Integer.cpp",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1741777947732,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1741777947732,
+            "name": "Commit-0",
+            "content": "class Solution {\r\n    public:\r\n        int maximumCount(vector<int>& nums) {\r\n            int positiveCount = 0;\r\n            int negativeCount = 0;\r\n            for(int i=0; i<nums.size(); i++){\r\n                if(nums[i] < 0){\r\n                    negativeCount++;\r\n                }\r\n                if(nums[i] > 0){\r\n                    positiveCount++;\r\n                }\r\n            }\r\n            return max(negativeCount, positiveCount);\r\n        }\r\n    };"
+        }
+    ]
+}
