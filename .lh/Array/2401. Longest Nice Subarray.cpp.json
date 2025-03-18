@@ -1,0 +1,38 @@
+{
+    "sourceFile": "Array/2401. Longest Nice Subarray.cpp",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1742296666991,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1742296684041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,9 @@\n                 }\r\n             }\r\n             return res;\r\n         }\r\n-    };\n\\ No newline at end of file\n+    };\r\n+\r\n+\r\n+\r\n+    \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1742296690369,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,5 +17,22 @@\n     };\r\n \r\n \r\n \r\n-    \n\\ No newline at end of file\n+class Solution {\r\n+        public:\r\n+            int longestNiceSubarray(vector<int>& nums) {\r\n+                int res = 0;\r\n+                int i = 0, j = 0;\r\n+                int mask = 0;\r\n+                while (j < nums.size()) {\r\n+                    while ((mask & nums[j]) != 0) {\r\n+                        mask ^= nums[i];\r\n+                        i++;\r\n+                    }\r\n+                    mask |= nums[j];\r\n+                    res = max(res, j - i + 1);\r\n+                    j++;\r\n+                }\r\n+                return res;\r\n+            }\r\n+        };    \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1742296711795,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,10 +18,10 @@\n \r\n \r\n \r\n class Solution {\r\n-        public:\r\n-            int longestNiceSubarray(vector<int>& nums) {\r\n+    public:\r\n+        int longestNiceSubarray(vector<int>& nums) {\r\n                 int res = 0;\r\n                 int i = 0, j = 0;\r\n                 int mask = 0;\r\n                 while (j < nums.size()) {\r\n"
+                },
+                {
+                    "date": 1742296718412,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,13 +20,13 @@\n \r\n class Solution {\r\n     public:\r\n         int longestNiceSubarray(vector<int>& nums) {\r\n-                int res = 0;\r\n-                int i = 0, j = 0;\r\n-                int mask = 0;\r\n-                while (j < nums.size()) {\r\n-                    while ((mask & nums[j]) != 0) {\r\n+            int res = 0;\r\n+            int i = 0, j = 0;\r\n+            int mask = 0;\r\n+            while (j < nums.size()) {\r\n+                while ((mask & nums[j]) != 0) {\r\n                         mask ^= nums[i];\r\n                         i++;\r\n                     }\r\n                     mask |= nums[j];\r\n"
+                },
+                {
+                    "date": 1742296726321,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,38 @@\n+class Solution {\r\n+    public:\r\n+        int longestNiceSubarray(vector<int>& nums) {\r\n+            int res = 0;\r\n+            for (int i = 0; i < nums.size(); i++) {\r\n+                int mask = 0;\r\n+                for (int j = i; j < nums.size(); j++) {\r\n+                    if ((mask & nums[j]) != 0) {\r\n+                        break;\r\n+                    }\r\n+                    mask |= nums[j];\r\n+                    res = max(res, j - i + 1);\r\n+                }\r\n+            }\r\n+            return res;\r\n+        }\r\n+    };\r\n+\r\n+\r\n+\r\n+class Solution {\r\n+    public:\r\n+        int longestNiceSubarray(vector<int>& nums) {\r\n+            int res = 0;\r\n+            int i = 0, j = 0;\r\n+            int mask = 0;\r\n+            while (j < nums.size()) {\r\n+                while ((mask & nums[j]) != 0) {\r\n+                    mask ^= nums[i];\r\n+                    i++;\r\n+                }\r\n+                mask |= nums[j];\r\n+                res = max(res, j - i + 1);\r\n+                j++;\r\n+            }\r\n+            return res;\r\n+            }\r\n+        };    \n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1742296666991,
+            "name": "Commit-0",
+            "content": "class Solution {\r\n    public:\r\n        int longestNiceSubarray(vector<int>& nums) {\r\n            int res = 0;\r\n            for (int i = 0; i < nums.size(); i++) {\r\n                int mask = 0;\r\n                for (int j = i; j < nums.size(); j++) {\r\n                    if ((mask & nums[j]) != 0) {\r\n                        break;\r\n                    }\r\n                    mask |= nums[j];\r\n                    res = max(res, j - i + 1);\r\n                }\r\n            }\r\n            return res;\r\n        }\r\n    };"
+        }
+    ]
+}
