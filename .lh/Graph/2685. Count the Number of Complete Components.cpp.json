@@ -1,0 +1,18 @@
+{
+    "sourceFile": "Graph/2685. Count the Number of Complete Components.cpp",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1742663242230,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1742663242230,
+            "name": "Commit-0",
+            "content": "class Solution {\r\n    public:\r\n        void dfs(int i, unordered_map<int, vector<int>>& adj, vector<bool>& visited, int& v, int& e) {\r\n            visited[i] = true;\r\n            v++;\r\n            e += adj[i].size();\r\n    \r\n            for(int &ngbr : adj[i]) {\r\n                if(!visited[ngbr]) {\r\n                    dfs(ngbr, adj, visited, v, e);\r\n                }\r\n            }\r\n        }\r\n    \r\n        int countCompleteComponents(int n, vector<vector<int>>& edges) {\r\n            unordered_map<int, vector<int>> adj;\r\n            int result = 0;\r\n    \r\n            for(auto &edge : edges) {\r\n                int u = edge[0];\r\n                int v = edge[1];\r\n    \r\n                adj[u].push_back(v);\r\n                adj[v].push_back(u);\r\n            }\r\n    \r\n            vector<bool> visited(n, false);\r\n            for(int i = 0; i < n; i++) {\r\n                if(visited[i] == true) {\r\n                    continue;\r\n                }\r\n                int v = 0;\r\n                int e = 0;\r\n                dfs(i, adj, visited, v, e);\r\n    \r\n                if((v*(v-1)) == e) {\r\n                    result++;\r\n                }\r\n            }\r\n            \r\n            return result;\r\n        }\r\n    };"
+        }
+    ]
+}
